@@ -1,0 +1,40 @@
+<nav class="main-header navbar navbar-expand navbar-dark navbar-dark">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+      
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      
+
+     
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+       {{ Auth::user()->nama }} <i class="fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu  dropdown-menu-right">
+          <a href="{{ route('admin.akun') }}" class="dropdown-item">
+            <i class="fas fa-user-cog mr-2"></i> Akun
+          </a>
+          <div class="dropdown-divider"></div>
+
+          <a href="{{ route('admin.logout') }}" 
+          onclick="event.preventDefault(); document.getElementById('logout-form').submit();"                   
+          class="dropdown-item">
+            <i class="fas fa-sign-out-alt mr-2"></i> Log Out
+          </a>
+
+          <form action="{{ route('admin.logout') }}" id="logout-form" method="post">
+            @csrf
+          </form>
+
+        </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
